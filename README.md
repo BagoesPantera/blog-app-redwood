@@ -1,6 +1,6 @@
-# README
+# Blog App Redwood.js
 
-Welcome to [RedwoodJS](https://redwoodjs.com)!
+A blog app in Redwood.js
 
 > **Prerequisites**
 >
