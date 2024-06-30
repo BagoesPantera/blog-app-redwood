@@ -7,8 +7,10 @@
     ]
   },
   "devDependencies": {
-    "@redwoodjs/core": "7.7.1",
-    "@redwoodjs/project-config": "7.7.1",
+    "@redwoodjs/auth-auth0-setup": "7.7.2",
+    "@redwoodjs/auth-dbauth-setup": "7.7.2",
+    "@redwoodjs/core": "7.7.2",
+    "@redwoodjs/project-config": "7.7.2",
     "autoprefixer": "^10.4.19",
     "postcss-loader": "^8.1.1",
     "tailwindcss": "^3.4.4"
