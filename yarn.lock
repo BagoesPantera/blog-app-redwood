@@ -104,13 +104,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@auth0/auth0-spa-js@npm:^2":
-  version: 2.1.3
-  resolution: "@auth0/auth0-spa-js@npm:2.1.3"
-  checksum: 10c0/781d474564731f96182ff78d85e1d13841e924eba5d2e9a42593db28c66e2a6c59db1755c8c906698f0cd6d33d6e61501f0e0ab57ec981700966246944cccf74
-  languageName: node
-  linkType: hard
-
 "@babel/cli@npm:7.24.5":
   version: 7.24.5
   resolution: "@babel/cli@npm:7.24.5"
@@ -5013,19 +5006,6 @@ __metadata:
     "@redwoodjs/cli-helpers": "npm:7.7.2"
     core-js: "npm:3.37.1"
   checksum: 10c0/337a2f05d9d7396f7c8a5ed5650d49657b2aa8ff71052c11451399aaef4a9fd0f214afb34db69d4de88d93b0051bf5c68d519156015cd304bf57ff104a18cfd4
-  languageName: node
-  linkType: hard
-
-"@redwoodjs/auth-auth0-web@npm:7.7.2":
-  version: 7.7.2
-  resolution: "@redwoodjs/auth-auth0-web@npm:7.7.2"
-  dependencies:
-    "@babel/runtime-corejs3": "npm:7.24.5"
-    "@redwoodjs/auth": "npm:7.7.2"
-    core-js: "npm:3.37.1"
-  peerDependencies:
-    "@auth0/auth0-spa-js": 2.1.3
-  checksum: 10c0/30522d037d4d515e8501e872e92934ded39109454ef18c0a11dc851f89e04f33c9f8cd66a0d73870800bba65f9c2db8d6472913552cedb2269f0ea4f85a16729
   languageName: node
   linkType: hard
 
@@ -18423,6 +18403,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-trix@npm:^0.10.2":
+  version: 0.10.2
+  resolution: "react-trix@npm:0.10.2"
+  dependencies:
+    trix: "npm:^1.3.1"
+  peerDependencies:
+    react: ">=17.0"
+    react-dom: ">=17.0"
+  checksum: 10c0/cf6750759bab599400a167ee1a60f979ffbcbecea4fb8f8bfa0cdccca84cc91183ef1420f8fc113d31d87e5f78946a651da15b2d7a5fd52a0119d7c0ccc94997
+  languageName: node
+  linkType: hard
+
 "react@npm:18.2.0":
   version: 18.2.0
   resolution: "react@npm:18.2.0"
@@ -19060,7 +19052,10 @@ __metadata:
     "@redwoodjs/project-config": "npm:7.7.2"
     autoprefixer: "npm:^10.4.19"
     postcss-loader: "npm:^8.1.1"
+    react-trix: "npm:^0.10.2"
+    slugify: "npm:^1.6.6"
     tailwindcss: "npm:^3.4.4"
+    trix: "npm:^2.1.1"
   languageName: unknown
   linkType: soft
 
@@ -19613,6 +19608,13 @@ __metadata:
     ansi-styles: "npm:^6.0.0"
     is-fullwidth-code-point: "npm:^4.0.0"
   checksum: 10c0/2d4d40b2a9d5cf4e8caae3f698fe24ae31a4d778701724f578e984dcb485ec8c49f0c04dab59c401821e80fcdfe89cace9c66693b0244e40ec485d72e543914f
+  languageName: node
+  linkType: hard
+
+"slugify@npm:^1.6.6":
+  version: 1.6.6
+  resolution: "slugify@npm:1.6.6"
+  checksum: 10c0/e7e63f08f389a371d6228bc19d64ec84360bf0a538333446cc49dbbf3971751a6d180d2f31551188dd007a65ca771e69f574e0283290a7825a818e90b75ef44d
   languageName: node
   linkType: hard
 
@@ -20767,6 +20769,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"trix@npm:^1.3.1":
+  version: 1.3.2
+  resolution: "trix@npm:1.3.2"
+  checksum: 10c0/6b611d64566f39ed6adf3c6ab24a7fce39ed979381197e9862a2f7508c389799d5c38e6abe4c6a46c854f2706b16632a513a3b4ddaaf3cec3a6abbfd136996ba
+  languageName: node
+  linkType: hard
+
+"trix@npm:^2.1.1":
+  version: 2.1.1
+  resolution: "trix@npm:2.1.1"
+  checksum: 10c0/d63135ebca0fa1d85a0fd4e1f37b55195b91f315f4dfa710d6bb9892f598516804fc072ba8b031efb0421931333a82e853d3cf6c8214a0c83849d45fab832639
+  languageName: node
+  linkType: hard
+
 "ts-interface-checker@npm:^0.1.9":
   version: 0.1.13
   resolution: "ts-interface-checker@npm:0.1.13"
@@ -21632,8 +21648,6 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "web@workspace:web"
   dependencies:
-    "@auth0/auth0-spa-js": "npm:^2"
-    "@redwoodjs/auth-auth0-web": "npm:7.7.2"
     "@redwoodjs/auth-dbauth-web": "npm:7.7.2"
     "@redwoodjs/forms": "npm:7.7.2"
     "@redwoodjs/router": "npm:7.7.2"
@@ -21647,6 +21661,7 @@ __metadata:
     react: "npm:18.2.0"
     react-dom: "npm:18.2.0"
     tailwindcss: "npm:^3.4.4"
+    trix: "npm:^2.1.1"
   languageName: unknown
   linkType: soft
 

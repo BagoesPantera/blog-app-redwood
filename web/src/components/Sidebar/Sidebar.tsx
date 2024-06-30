@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 import { IconButton } from '@mui/material'
 
-import { navigate, useLocation } from '@redwoodjs/router'
+import { navigate, routes, useLocation } from "@redwoodjs/router";
 
 const Sidebar = () => {
   const location = useLocation()
@@ -16,9 +16,15 @@ const Sidebar = () => {
     {
       id: 'create',
       label: 'Create',
-      url: '/create',
+      url: routes.createBlog(),
       icon: <></>,
     },
+    {
+      id: 'my-blog',
+      label: 'My Blog',
+      url: '/my-blog',
+      icon: <></>,
+    }
   ]
   return (
     <div className="stiky left-0 top-24 mr-4 h-screen w-72 rounded-r-lg bg-red-100">
