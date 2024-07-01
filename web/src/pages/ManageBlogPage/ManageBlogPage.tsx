@@ -1,19 +1,17 @@
+import { useState } from 'react'
+
 import { TrixEditor } from 'react-trix'
+import slugify from 'slugify'
 
 import { FieldError, Form, Label, Submit, TextField } from '@redwoodjs/forms'
-import { Link, routes } from '@redwoodjs/router'
+import { Link, navigate, routes } from '@redwoodjs/router'
 import { Metadata, useMutation } from '@redwoodjs/web'
 import 'trix/dist/trix.css'
 import 'trix/dist/trix.esm'
 import 'trix/dist/trix.umd'
 import { toast } from '@redwoodjs/web/toast'
 
-import { useState } from 'react'
-
-import slugify from 'slugify'
-
 import { useAuth } from 'src/auth'
-import { getCurrentUser } from 'src/lib/auth'
 
 const CREATE_BLOG_MUTATION = gql`
   mutation CreateBlogMutation($input: CreateBlogInput!) {
@@ -22,14 +20,16 @@ const CREATE_BLOG_MUTATION = gql`
       userId
       title
       slug
-      content
+      htmlContent
+      textContent
       image
     }
   }
 `
 
 const ManageBlogPage = () => {
-  const [content, setContent] = useState('')
+  const [htmlContent, setHtmlContent] = useState('')
+  const [textContent, setTextContent] = useState('')
 
   const { currentUser } = useAuth()
 
@@ -39,9 +39,8 @@ const ManageBlogPage = () => {
     editor.insertString('')
   }
   function handleChange(html, text) {
-    // html is the new html content
-    // text is the new text content
-    setContent(html)
+    setHtmlContent(html)
+    setTextContent(text)
   }
   const mergeTags = []
 
@@ -49,13 +48,15 @@ const ManageBlogPage = () => {
     CREATE_BLOG_MUTATION,
     {
       onCompleted: () => {
-        toast.success('Success')
+        toast.success('Berhasil menambah data')
+        navigate(routes.home())
       },
     }
   )
 
   const onSubmit = async (data) => {
-    data.content = content
+    data.htmlContent = htmlContent
+    data.textContent = textContent
     // https://stackoverflow.com/a/33146982/13079820
     data.slug = `${slugify(data.title)}-${Math.random().toString(36).slice(-5)}`
     data.userId = currentUser.id

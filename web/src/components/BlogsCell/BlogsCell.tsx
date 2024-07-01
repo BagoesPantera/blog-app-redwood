@@ -10,6 +10,8 @@ export const QUERY: TypedDocumentNode<BlogsQuery, BlogsQueryVariables> = gql`
   query BlogsQuery {
     blogs {
       id
+      title
+      createdAt
     }
   }
 `

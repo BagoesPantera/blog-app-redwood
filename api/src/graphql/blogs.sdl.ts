@@ -4,7 +4,8 @@ export const schema = gql`
     userId: Int!
     title: String!
     slug: String!
-    content: String!
+    htmlContent: String!
+    textContent: String!
     image: String!
     createdAt: DateTime!
     updatedAt: DateTime!
@@ -20,7 +21,8 @@ export const schema = gql`
     userId: Int!
     title: String!
     slug: String!
-    content: String!
+    htmlContent: String!
+    textContent: String!
     image: String!
   }
 
@@ -28,7 +30,8 @@ export const schema = gql`
     userId: Int
     title: String
     slug: String
-    content: String
+    htmlContent: String!
+    textContent: String!
     image: String
   }
 
