@@ -13,6 +13,7 @@ export const schema = gql`
   }
 
   type Query {
+    authorsBlogs: [Blog!]! @requireAuth
     blogs: [Blog!]! @requireAuth
     blog(id: Int!): Blog @requireAuth
   }

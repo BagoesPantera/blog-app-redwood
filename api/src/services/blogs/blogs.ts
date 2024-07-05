@@ -16,6 +16,16 @@ export const blog: QueryResolvers['blog'] = ({ id }) => {
   })
 }
 
+export const authorsBlogs: QueryResolvers['authorsBlogs'] = (
+  _obj,
+  { context }
+) => {
+  const userId = context.currentUser.id
+  return db.blog.findMany({
+    where: { userId },
+  })
+}
+
 export const createBlog: MutationResolvers['createBlog'] = ({ input }) => {
   return db.blog.create({
     data: input,

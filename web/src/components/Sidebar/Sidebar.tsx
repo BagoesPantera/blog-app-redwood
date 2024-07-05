@@ -23,9 +23,9 @@ const Sidebar = () => {
       icon: <></>,
     },
     {
-      id: 'my-blog',
-      label: 'My Blog',
-      url: '/my-blog',
+      id: 'my-blogs',
+      label: 'My Blogs',
+      url: '/my-blogs',
       icon: <></>,
     },
   ]
