@@ -32,6 +32,7 @@
     "@mui/icons-material": "^5.15.19",
     "@mui/material": "^5.15.19",
     "@mui/styled-engine": "^5.15.14",
+    "@mui/x-data-grid": "^7.9.0",
     "react-trix": "^0.10.2",
     "slugify": "^1.6.6",
     "trix": "^2.1.1"

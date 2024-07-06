@@ -1,18 +1,13 @@
-// In this file, all Page components from 'src/pages` are auto-imported. Nested
-// directories are supported, and should be uppercase. Each subdirectory will be
-// prepended onto the component name.
-//
-// Examples:
-//
-// 'src/pages/HomePage/HomePage.js'         -> HomePage
-// 'src/pages/Admin/BooksPage/BooksPage.js' -> AdminBooksPage
-
-import { Router, Route, Set, PrivateSet } from '@redwoodjs/router'
+import { Router, Route, PrivateSet } from '@redwoodjs/router'
 
 import { useAuth } from 'src/auth'
 import UserLayout from 'src/layouts/UserLayout/UserLayout'
+import AuthorBlogsPage from 'src/pages/AuthorBlogsPage/AuthorBlogsPage'
 import ForgotPasswordPage from 'src/pages/ForgotPasswordPage/ForgotPasswordPage'
+import HomePage from 'src/pages/HomePage/HomePage'
+import LoginPage from 'src/pages/LoginPage/LoginPage'
 import ManageBlogPage from 'src/pages/ManageBlogPage/ManageBlogPage'
+import NotFoundPage from 'src/pages/NotFoundPage/NotFoundPage'
 import ResetPasswordPage from 'src/pages/ResetPasswordPage/ResetPasswordPage'
 import SignupPage from 'src/pages/SignupPage/SignupPage'
 
@@ -26,9 +21,9 @@ const Routes = () => {
 
       <PrivateSet wrap={UserLayout} unauthenticated="login">
         <Route path="/" page={HomePage} name="home" />
-        <Route path="/blog/create" page={ManageBlogPage} name="createBlog" />
         <Route path="/my-blogs" page={AuthorBlogsPage} name="authorBlogs" />
-        <Route path="/manage-blog" page={ManageBlogPage} name="manageBlog" />
+        <Route path="/blog/create" page={ManageBlogPage} name="createBlog" />
+        <Route path="/blog/edit/{id:Int}" page={ManageBlogPage} name="editBlog" />
       </PrivateSet>
       <Route notfound page={NotFoundPage} />
     </Router>

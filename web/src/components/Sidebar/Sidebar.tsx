@@ -17,15 +17,15 @@ const Sidebar = () => {
 
   const menu = [
     {
-      id: 'create',
-      label: 'Create',
-      url: routes.createBlog(),
+      id: 'home',
+      label: 'Home',
+      url: routes.home(),
       icon: <></>,
     },
     {
       id: 'my-blogs',
       label: 'My Blogs',
-      url: '/my-blogs',
+      url: routes.authorBlogs(),
       icon: <></>,
     },
   ]
